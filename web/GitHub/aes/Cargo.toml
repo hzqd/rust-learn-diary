@@ -1,0 +1,9 @@
+[package]
+name = "tmp"
+version = "0.1.0"
+authors = ["aoko"]
+edition = "2018"
+
+[dependencies]
+rust-crypto = "0.2.36"
+rand = "0.6.5"

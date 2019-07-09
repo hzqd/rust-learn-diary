@@ -1,0 +1,17 @@
+language: rust
+rust:
+  - stable
+  - nightly
+before_install:
+    - wget https://www.libsdl.org/release/SDL2-2.0.5.tar.gz -O SDL2-2.0.5.tar.gz
+    - tar -xzvf SDL2-2.0.5.tar.gz
+install:
+   - (cd SDL2-2.0.5 && ./configure && make && sudo make install)
+env:
+  matrix:
+    - EXAMPLE=user_input
+    - EXAMPLE=freetype
+script:
+  - cargo build -v
+  - cd $EXAMPLE
+  - cargo build -v
